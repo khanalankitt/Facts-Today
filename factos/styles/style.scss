@@ -1,5 +1,83 @@
+.oxygen-light {
+    font-family: "Oxygen", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+@mixin center($jcvalue){
+    display: flex;
+    justify-content: $jcvalue;
+    align-items: center;
+}
+nav{
+    height: 60px;
+    max-width: 100vw;
+    @include center(center);
+    background: rgb(64, 47, 94);
+    padding: 0px 50px;
+    .container{
+        height: 50px;
+        width: 1920px;
+        @include center(space-between);
+        height: 60px;
+        .heading{
+            height: 90%;
+            @include center(center);
+            h2{
+                color: white;
+            }
+        }   
+        .links{
+            height: 90%;
+            @include center(center);
+            color: white;
+            ul{
+                @include center(center);
+                list-style-type: none;
+                margin-right:20px;
+                a{
+                    text-decoration-line: none;
+                    color: white;
+                }
+                li{
+                    margin: 5px 8px;
+                    padding: 3px 5px;
+                    font-size: 18px;
+                    font-weight:bolder;
+                    cursor: pointer;
+                    border-bottom: 2px solid transparent;
+                    transition: 0.3s all;
+                    &:hover{
+                        border-bottom: 2px solid white;
+                    }
+                }
+            }
+            .user{
+                @include center(center);
+                height: 80%;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.2s all;
+                p{
+                    margin: 0px 5px;
+                    font-weight: bold;
+                }
+                img{
+                    height: 40px;
+                    width: 40px;
+                    object-fit: cover;
+                }
+                &:hover{
+                    background: rgb(78, 58, 114);
+                }
+            }
+        }
+    }
+}
+
+

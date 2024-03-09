@@ -1,5 +1,91 @@
+.oxygen-light {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+nav {
+  height: 60px;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(64, 47, 94);
+  padding: 0px 50px;
+}
+nav .container {
+  height: 50px;
+  width: 1920px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+nav .container .heading {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .container .heading h2 {
+  color: white;
+}
+nav .container .links {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+nav .container .links ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 20px;
+}
+nav .container .links ul a {
+  text-decoration-line: none;
+  color: white;
+}
+nav .container .links ul li {
+  margin: 5px 8px;
+  padding: 3px 5px;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s all;
+}
+nav .container .links ul li:hover {
+  border-bottom: 2px solid white;
+}
+nav .container .links .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+nav .container .links .user p {
+  margin: 0px 5px;
+  font-weight: bold;
+}
+nav .container .links .user img {
+  height: 40px;
+  width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+nav .container .links .user:hover {
+  background: rgb(78, 58, 114);
 }/*# sourceMappingURL=style.css.map */
