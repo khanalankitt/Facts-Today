@@ -17,7 +17,7 @@ nav{
     height: 60px;
     max-width: 100vw;
     @include center(center);
-    background: rgb(64, 47, 94);
+    background: rgb(43, 43, 91);
     padding: 0px 50px;
     .container{
         height: 50px;
@@ -80,4 +80,67 @@ nav{
     }
 }
 
-
+.login-container{
+    @include center(space-around);
+    flex-direction: column;
+    height: 450px;
+    width: 400px;
+    border-radius: 10px;
+    margin:10vh auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    hr{
+        height: 1px;
+        width: 90%;
+    }
+    form{
+        height: 250px;
+        width: 90%;
+        @include center(center);
+        gap: 20px;
+        flex-direction: column;
+        input{
+            height: 40px;
+            width: 80%;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            outline: none;
+            font-size: 17px;
+        }
+        .submit{
+            background-color:slateblue;
+            color: white;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        .por{
+            position: absolute;
+            margin-top: 215px;
+            width: 30px;
+            text-align: center;
+            background: white;
+        }
+        a{
+            text-decoration-line:none;
+            font-weight: bold; 
+        }
+    }
+    button{
+        @include center(center);
+        width: 80%;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        border: 1px solid grey;
+        cursor: pointer;
+        gap: 20px;
+        transition: 0.2s all;
+        color: grey;
+        background: white;
+        font-size: 17px;
+        transition: 0.2s all;
+        &:hover{
+            background: whitesmoke;
+        }
+    }
+}

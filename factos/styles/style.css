@@ -16,7 +16,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(64, 47, 94);
+  background: rgb(43, 43, 91);
   padding: 0px 50px;
 }
 nav .container {
@@ -88,4 +88,76 @@ nav .container .links .user img {
 }
 nav .container .links .user:hover {
   background: rgb(78, 58, 114);
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 450px;
+  width: 400px;
+  border-radius: 10px;
+  margin: 10vh auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.login-container hr {
+  height: 1px;
+  width: 90%;
+}
+.login-container form {
+  height: 250px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+.login-container form input {
+  height: 40px;
+  width: 80%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  outline: none;
+  font-size: 17px;
+}
+.login-container form .submit {
+  background-color: slateblue;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+.login-container form .por {
+  position: absolute;
+  margin-top: 215px;
+  width: 30px;
+  text-align: center;
+  background: white;
+}
+.login-container form a {
+  text-decoration-line: none;
+  font-weight: bold;
+}
+.login-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  border: 1px solid grey;
+  cursor: pointer;
+  gap: 20px;
+  transition: 0.2s all;
+  color: grey;
+  background: white;
+  font-size: 17px;
+  transition: 0.2s all;
+}
+.login-container button:hover {
+  background: whitesmoke;
 }/*# sourceMappingURL=style.css.map */
