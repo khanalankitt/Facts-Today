@@ -37,5 +37,5 @@ next-env.d.ts
 
 
 #css
-style.scss
-style.css.map
+./styles/style.scss
+./styles/style.css.map
