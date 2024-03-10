@@ -34,6 +34,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-/factos/styles/style.scss
-/factos/styles/style.css.map
