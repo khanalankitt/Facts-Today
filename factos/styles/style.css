@@ -16,7 +16,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(43, 43, 91);
+  background: rgb(93, 93, 191);
   padding: 0px 50px;
 }
 nav .container {
@@ -33,7 +33,10 @@ nav .container .heading {
   justify-content: center;
   align-items: center;
 }
-nav .container .heading h2 {
+nav .container .heading a {
+  text-decoration-line: none;
+}
+nav .container .heading a h2 {
   color: white;
 }
 nav .container .links {
@@ -87,25 +90,29 @@ nav .container .links .user img {
      object-fit: cover;
 }
 nav .container .links .user:hover {
-  background: rgb(78, 58, 114);
+  background: rgb(79, 79, 174);
 }
 
-.login-container {
+.login-container, .loginsignup {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 450px;
+  height: 430px;
   width: 400px;
+  gap: 20px;
   border-radius: 10px;
   margin: 10vh auto;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
-.login-container hr {
+.login-container hr, .loginsignup hr {
   height: 1px;
   width: 90%;
 }
-.login-container form {
+.login-container h1, .loginsignup h1 {
+  color: rgb(93, 93, 191);
+}
+.login-container form, .loginsignup form {
   height: 250px;
   width: 90%;
   display: flex;
@@ -114,7 +121,7 @@ nav .container .links .user:hover {
   gap: 20px;
   flex-direction: column;
 }
-.login-container form input {
+.login-container form input, .loginsignup form input {
   height: 40px;
   width: 80%;
   padding: 5px 10px;
@@ -123,24 +130,28 @@ nav .container .links .user:hover {
   outline: none;
   font-size: 17px;
 }
-.login-container form .submit {
-  background-color: slateblue;
+.login-container form .submit, .loginsignup form .submit {
+  background-color: rgb(93, 93, 191);
   color: white;
   cursor: pointer;
   font-size: 17px;
+  transition: 0.2s all;
 }
-.login-container form .por {
+.login-container form .submit:hover, .loginsignup form .submit:hover {
+  background: rgb(79, 79, 174);
+}
+.login-container form .por, .loginsignup form .por {
   position: absolute;
   margin-top: 215px;
   width: 30px;
   text-align: center;
   background: white;
 }
-.login-container form a {
+.login-container form a, .loginsignup form a {
   text-decoration-line: none;
   font-weight: bold;
 }
-.login-container button {
+.login-container button, .loginsignup button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,6 +169,6 @@ nav .container .links .user:hover {
   font-size: 17px;
   transition: 0.2s all;
 }
-.login-container button:hover {
+.login-container button:hover, .loginsignup button:hover {
   background: whitesmoke;
 }/*# sourceMappingURL=style.css.map */

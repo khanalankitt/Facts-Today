@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Login() {
     return (
       <>
-        <div className="login-container">
+        <div className="login-container loginsignup">
           <h1>Login</h1>
           <form>
             <input type="email" placeholder="Email"/>
@@ -20,7 +20,7 @@ export default function Login() {
               height={30}
               width={30}
             />
-            Login with Google
+            Continue with Google
           </button>
         </div>
       </>

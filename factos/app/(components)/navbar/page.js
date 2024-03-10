@@ -6,13 +6,12 @@ export default function Navbar(){
             <nav>
                 <div className="container">
                     <div className="heading">
-                        <h2>Facts Today</h2>
+                        <Link href="/">
+                            <h2>Facts Today</h2>
+                        </Link>
                     </div>
                     <div className="links">
                         <ul>
-                            <Link className="link" href="/">
-                                <li>Home</li>
-                            </Link>
                             <Link className="link" href="/login">
                                 <li>Login</li>
                             </Link>
