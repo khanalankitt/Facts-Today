@@ -1,6 +1,19 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useSession } from "next-auth/react"
+import { signOut } from "next-auth/react";
+
 export default function Navbar(){
+    const { data: session, status } = useSession()
+    return(
+        <>
+            {status == "authenticated" ? <NavbarComp src={session.user.image} name={session.user.name.split(" ")[0].toUpperCase()} goto="/dashboard"/> : <NavbarComp src="/person.png" name="Sign in" goto="/login"/>}
+        </>
+    );
+}
+
+export function NavbarComp(props){
     return (
         <>
             <nav>
@@ -11,23 +24,17 @@ export default function Navbar(){
                         </Link>
                     </div>
                     <div className="links">
-                        <ul>
-                            <Link className="link" href="/login">
-                                <li>Login</li>
-                            </Link>
-                            <Link className="link" href="/signup">
-                                <li>Signup</li>
-                            </Link>
-                        </ul>
-                        <div className="user">
-                            <Image 
-                                src="/person.png" 
-                                alt="User Image"
-                                height={40}
-                                width={40}
-                            />
-                            <p>Hello Name</p>
-                        </div>
+                        <Link href={props.goto}>
+                            <div className="user">
+                                <Image 
+                                    src={props.src} 
+                                    alt="User Image"
+                                    height={40}
+                                    width={40}
+                                />
+                                <p>{props.name}</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </nav>

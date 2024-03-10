@@ -46,34 +46,15 @@ nav .container .links {
   align-items: center;
   color: white;
 }
-nav .container .links ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  margin-right: 20px;
-}
-nav .container .links ul a {
-  text-decoration-line: none;
+nav .container .links a {
+  text-decoration: none;
   color: white;
-}
-nav .container .links ul li {
-  margin: 5px 8px;
-  padding: 3px 5px;
-  font-size: 18px;
-  font-weight: bolder;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  transition: 0.3s all;
-}
-nav .container .links ul li:hover {
-  border-bottom: 2px solid white;
 }
 nav .container .links .user {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80%;
+  height: 85%;
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
@@ -86,6 +67,7 @@ nav .container .links .user p {
 nav .container .links .user img {
   height: 40px;
   width: 40px;
+  border-radius: 5px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -98,8 +80,8 @@ nav .container .links .user:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 430px;
-  width: 400px;
+  height: 400px;
+  width: 380px;
   gap: 20px;
   border-radius: 10px;
   margin: 10vh auto;
@@ -113,7 +95,7 @@ nav .container .links .user:hover {
   color: rgb(93, 93, 191);
 }
 .login-container form, .loginsignup form {
-  height: 250px;
+  height: 230px;
   width: 90%;
   display: flex;
   justify-content: center;
@@ -122,7 +104,7 @@ nav .container .links .user:hover {
   flex-direction: column;
 }
 .login-container form input, .loginsignup form input {
-  height: 40px;
+  height: 35px;
   width: 80%;
   padding: 5px 10px;
   border-radius: 5px;
@@ -155,8 +137,8 @@ nav .container .links .user:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 40px;
+  width: 70%;
+  height: 35px;
   border-radius: 5px;
   border: none;
   outline: none;
@@ -166,7 +148,7 @@ nav .container .links .user:hover {
   transition: 0.2s all;
   color: grey;
   background: white;
-  font-size: 17px;
+  font-size: 16px;
   transition: 0.2s all;
 }
 .login-container button:hover, .loginsignup button:hover {

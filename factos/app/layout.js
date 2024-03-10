@@ -1,10 +1,7 @@
+"use client"
 import Navbar from "./(components)/navbar/page";
 import "../styles/style.css";
-
-export const metadata = {
-  title: "Today Facts",
-  description: "Share a fact that you learned today",
-};
+import { SessionProvider } from "next-auth/react";
 
 export default function RootLayout({ children }) {
   return (
@@ -17,8 +14,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className="oxygen-light">
         <div className="bodyContainer">
-          <Navbar/>
-          {children}
+          <SessionProvider>
+            <Navbar/>
+            {children}
+          </SessionProvider>
         </div>
       </body>
     </html>

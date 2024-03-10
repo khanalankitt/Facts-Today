@@ -1,5 +1,7 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 export default function Signup() {
     return (
       <>
@@ -13,11 +15,14 @@ export default function Signup() {
             <hr />
             <p className="por">or</p>
           </form>
-          <button>
+          <button onClick={()=>{
+                signIn('google',{callbackUrl:"http://localhost/3000/"})
+          }}>
             <Image
               src="/google.png"
               height={30}
               width={30}
+              alt="Google"
             />
             Continue with Google
           </button>

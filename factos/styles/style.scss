@@ -40,30 +40,13 @@ nav{
             height: 90%;
             @include center(center);
             color: white;
-            ul{
-                @include center(center);
-                list-style-type: none;
-                margin-right:20px;
-                a{
-                    text-decoration-line: none;
-                    color: white;
-                }
-                li{
-                    margin: 5px 8px;
-                    padding: 3px 5px;
-                    font-size: 18px;
-                    font-weight:bolder;
-                    cursor: pointer;
-                    border-bottom: 2px solid transparent;
-                    transition: 0.3s all;
-                    &:hover{
-                        border-bottom: 2px solid white;
-                    }
-                }
+            a{
+                text-decoration: none;
+                color: white;
             }
             .user{
                 @include center(center);
-                height: 80%;
+                height: 85%;
                 padding: 5px;
                 border-radius: 5px;
                 cursor: pointer;
@@ -75,6 +58,7 @@ nav{
                 img{
                     height: 40px;
                     width: 40px;
+                    border-radius: 5px;
                     object-fit: cover;
                 }
                 &:hover{
@@ -88,12 +72,13 @@ nav{
 .login-container,.loginsignup{
     @include center(center);
     flex-direction: column;
-    height: 430px;
-    width: 400px;
+    height: 400px;
+    width: 380px;
     gap: 20px;
     border-radius: 10px;
     margin:10vh auto;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    hr{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    
+    hr{
         height: 1px;
         width: 90%;
     }
@@ -101,13 +86,13 @@ nav{
         color: $primary-color;
     }
     form{
-        height: 250px;
+        height: 230px;
         width: 90%;
         @include center(center);
         gap: 20px;
         flex-direction: column;
         input{
-            height: 40px;
+            height:35px;
             width: 80%;
             padding: 5px 10px;
             border-radius: 5px;
@@ -139,8 +124,8 @@ nav{
     }
     button{
         @include center(center);
-        width: 80%;
-        height: 40px;
+        width: 70%;
+        height: 35px;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -150,7 +135,7 @@ nav{
         transition: 0.2s all;
         color: grey;
         background: white;
-        font-size: 17px;
+        font-size: 16px;
         transition: 0.2s all;
         &:hover{
             background: whitesmoke;
