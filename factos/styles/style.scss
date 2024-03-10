@@ -69,10 +69,10 @@ nav{
     }
 }
 
-.login-container,.loginsignup{
+.login-container{
     @include center(center);
     flex-direction: column;
-    height: 400px;
+    height: 250px;
     width: 380px;
     gap: 20px;
     border-radius: 10px;
@@ -80,47 +80,10 @@ nav{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;    
     hr{
         height: 1px;
-        width: 90%;
+        width: 80%;
     }
-    h1{
+    h2{
         color: $primary-color;
-    }
-    form{
-        height: 230px;
-        width: 90%;
-        @include center(center);
-        gap: 20px;
-        flex-direction: column;
-        input{
-            height:35px;
-            width: 80%;
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: 1px solid grey;
-            outline: none;
-            font-size: 17px;
-        }
-        .submit{
-            background-color:$primary-color;
-            color: white;
-            cursor: pointer;
-            font-size: 17px;
-            transition: 0.2s all;
-            &:hover{
-                background: $hover-color;
-            }
-        }
-        .por{
-            position: absolute;
-            margin-top: 215px;
-            width: 30px;
-            text-align: center;
-            background: white;
-        }
-        a{
-            text-decoration-line:none;
-            font-weight: bold; 
-        }
     }
     button{
         @include center(center);
