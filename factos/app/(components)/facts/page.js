@@ -94,7 +94,7 @@ export function Factos(){
                         onClick={contract}
                     >Cancel</button>
                 </div>
-                <hr style={{width:"100%"}} />
+                {/* <hr style={{width:"100%"}} /> */}
                 <div className="items">
                         <Item/>
                 </div>

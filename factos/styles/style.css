@@ -18,7 +18,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #262d3a;
+  background: transparent;
   padding: 0px 50px;
 }
 nav .container {
@@ -69,7 +69,7 @@ nav .container .links .user p {
 nav .container .links .user img {
   height: 40px;
   width: 40px;
-  border-radius: 5px;
+  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -93,9 +93,6 @@ nav .container .links .user:hover {
 .login-container hr {
   height: 1px;
   width: 80%;
-}
-.login-container h2 {
-  color: rgb(93, 93, 191);
 }
 .login-container button {
   display: flex;
@@ -166,7 +163,7 @@ nav .container .links .user:hover {
   border: 2px solid white;
 }
 .home-container button:hover {
-  background: #262d3a;
+  background: transparent;
   color: whitesmoke;
 }
 
