@@ -32,7 +32,7 @@ export function Factos(){
     const [buttonWidth,setButtonWidth] = useState("0px");
 
 
-    const { data: session, status } = useSession()
+    const { data: session } = useSession()
     const expand = ()=>{
         setAdderHeight("40%");
         setInputHeight("180px");
@@ -96,31 +96,43 @@ export function Factos(){
                 </div>
                 <hr style={{width:"100%"}} />
                 <div className="items">
-                    <div className="item">
-                        <div className="info">
-                            <div className="userDetail">
-                                <Image 
-                                    src={session.user.image}
-                                    height={35}
-                                    width={35}
-                                    alt="User"
-                                    />
-                                <p>
-                                    <b>
-                                        {session.user.name}
-                                    </b>
-                                </p>
-                            </div>
-                            <p title={Date()}>
-                                {
-                                    <DateProvider/>
-                                }
-                            </p>
-                        </div>
-                        <div className="content">
-                            <p></p>
-                        </div>
+                        <Item/>
+                </div>
+            </div>
+        </>
+    );
+}
+export function Item(){
+    const { data: session, status } = useSession()
+    return(
+        <>
+            <div className="item">
+                <div className="info">
+                    <div className="userDetail">
+                        <Image 
+                            src={session.user.image}
+                            height={35}
+                            width={35}
+                            alt="User"
+                            />
+                        <p>
+                            <b>
+                                {session.user.name}
+                            </b>
+                        </p>
                     </div>
+                    <p title={Date()}>
+                        {
+                            <DateProvider/>
+                        }
+                    </p>
+                </div>
+                <div className="content">
+                    <p>A fact a day keeps your stupidity away{`:)`}
+                       <br />Share a fact that you learned today.
+                       <br />Also learn facts from others.
+                    
+                     </p>
                 </div>
             </div>
         </>

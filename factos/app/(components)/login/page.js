@@ -8,10 +8,9 @@ export default function Login() {
           <h2>Login to get started</h2>
           <hr />
           <button onClick={()=>{
-                signIn('google',{callbackUrl:"http://localhost/3000/"})
+                signIn('google',{callbackUrl:"http://localhost:3000/facts"})
           }}>
             <br />
-            
             <Image
               src="/google.png"
               height={30}
@@ -20,7 +19,7 @@ export default function Login() {
             Continue with Google
           </button>
           <button onClick={()=>{
-            signIn("github",{callbackUrl:"https://localhost:3000/"})
+            signIn("github",{callbackUrl:"https://localhost:3000/facts"})
           }}>
           <Image
             src="/github.png"

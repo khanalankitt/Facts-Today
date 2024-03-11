@@ -318,4 +318,17 @@ nav .container .links .user:hover {
 ::placeholder {
   color: #c6c3c3;
   font-size: 18px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: #4c535f;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b414c;
 }/*# sourceMappingURL=style.css.map */
