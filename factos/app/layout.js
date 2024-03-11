@@ -1,5 +1,4 @@
 "use client"
-import Navbar from "./(components)/navbar/page";
 import "../styles/style.css";
 import { SessionProvider } from "next-auth/react";
 
@@ -16,7 +15,6 @@ export default function RootLayout({ children }) {
       <body className="oxygen-light">
         <div className="bodyContainer">
           <SessionProvider>
-            <Navbar/>
             {children}
           </SessionProvider>
         </div>

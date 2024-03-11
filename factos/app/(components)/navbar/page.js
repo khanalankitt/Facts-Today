@@ -20,7 +20,7 @@ export function NavbarComp(props){
                 <div className="container">
                     <div className="heading">
                         <Link href="/">
-                            <h2>Facts Today</h2>
+                            <h2>Home</h2>
                         </Link>
                     </div>
                     <div className="links">
