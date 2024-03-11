@@ -38,5 +38,4 @@ next-env.d.ts
 
 .env
 
-/styles/style.css
-/styles/style.css.map
+*.css
