@@ -25,13 +25,12 @@ export function RequestSignin(){
     );
 }
 export function Factos(){
+    const [facts, setFacts] = useState([]); 
     const [adderHeight,setAdderHeight] = useState("11%");
     const [inputHeight,setInputHeight] = useState("50px");
     const [buttonDisplay,setButtonDisplay] = useState("hidden");
     const [textareaValue,setTextareaValue] = useState("");
     const [buttonWidth,setButtonWidth] = useState("0px");
-
-
     const { data: session } = useSession()
     const expand = ()=>{
         setAdderHeight("40%");
@@ -58,11 +57,12 @@ export function Factos(){
     }
     const share = ()=>{
         if(textareaValue != ""){
+            setFacts([...facts, { fact: textareaValue}]);
             setAdderHeight("11%");
             setInputHeight("50px");
             setButtonDisplay("hidden");
             setTextareaValue("");
-            setButtonWidth("0px");        
+            setButtonWidth("0px");
         }else{
             alert("Cannot be empty!")
         }
@@ -95,13 +95,18 @@ export function Factos(){
                     >Cancel</button>
                 </div>
                 <div className="items">
-                        <Item/>
+                        <Item fact={`A fact a day keeps your stupidity away:)`}/>
+                        {
+                          facts.map((fact, index) => (
+                            <Item key={index} fact={fact.fact}/>
+                          ))
+                        }
                 </div>
             </div>
         </>
     );
 }
-export function Item(){
+export function Item(props){
     const { data: session, status } = useSession()
     return(
         <>
@@ -127,11 +132,7 @@ export function Item(){
                     </p>
                 </div>
                 <div className="content">
-                    <p>A fact a day keeps your stupidity away{`:)`}
-                       <br />Share a fact that you learned today.
-                       <br />Also learn facts from others.
-                    
-                     </p>
+                    <p>{props.fact}</p>
                 </div>
             </div>
         </>
