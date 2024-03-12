@@ -1,11 +1,17 @@
 "use client"
 import Image from "next/image";
 import { signIn } from "next-auth/react"
+import Link from "next/link";
 export default function Login() {
     return (
       <>
         <div className="login-container loginsignup">
-          <h2>Login to get started</h2>
+          <h2><Link href="/" style={{
+            textDecoration:"none",
+            color:"white"
+          }}>
+          {`←`}
+              </Link>  &nbsp; Login to get started</h2>
           <hr />
           <button onClick={()=>{
                 signIn('google',{callbackUrl:"http://localhost:3000/facts"})
@@ -23,8 +29,8 @@ export default function Login() {
           }}>
           <Image
             src="/github.png"
-            height={40}
-            width={40}
+            height={35}
+            width={33}
             alt="Github"
           />Continue with Github
           </button>

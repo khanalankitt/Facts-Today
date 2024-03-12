@@ -82,7 +82,7 @@ nav .container .links .user:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: whitesmoke;
+  background: #3b414c;
   height: 250px;
   width: 380px;
   gap: 20px;
@@ -93,6 +93,9 @@ nav .container .links .user:hover {
 .login-container hr {
   height: 1px;
   width: 80%;
+}
+.login-container h2 {
+  color: whitesmoke;
 }
 .login-container button {
   display: flex;
@@ -107,13 +110,17 @@ nav .container .links .user:hover {
   cursor: pointer;
   gap: 20px;
   transition: 0.2s all;
-  color: grey;
-  background: white;
+  color: white;
+  background: #262d3a;
   font-size: 16px;
   transition: 0.2s all;
 }
 .login-container button:hover {
-  background: whitesmoke;
+  background: #444a55;
+}
+.login-container button img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .home-container {

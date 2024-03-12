@@ -71,7 +71,7 @@ nav{
 .login-container{
     @include center(center);
     flex-direction: column;
-    background: whitesmoke;
+    background: #3b414c;
     height: 250px;
     width: 380px;
     gap: 20px;
@@ -81,6 +81,9 @@ nav{
     hr{
         height: 1px;
         width: 80%;
+    }
+    h2{
+        color: whitesmoke
     }
     button{
         @include center(center);
@@ -93,12 +96,15 @@ nav{
         cursor: pointer;
         gap: 20px;
         transition: 0.2s all;
-        color: grey;
-        background: white;
+        color: white;
+        background: #262d3a;
         font-size: 16px;
         transition: 0.2s all;
         &:hover{
-            background: whitesmoke;
+            background: #444a55;
+        }
+        img{
+            object-fit: cover;
         }
     }
 }
