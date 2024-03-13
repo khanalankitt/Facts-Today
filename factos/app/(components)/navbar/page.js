@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react"
-import { signOut } from "next-auth/react";
 
 export default function Navbar(){
     const { data: session, status } = useSession()
@@ -23,7 +22,7 @@ export function NavbarComp(props){
                             <h2>Home</h2>
                         </Link>
                     </div>
-                    <div className="links">
+                    <div className="links" title="Dashboard">
                         <Link href={props.goto}>
                             <div className="user">
                                 <Image 

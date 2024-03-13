@@ -4,6 +4,7 @@ import Navbar from "../navbar/page";
 import { useSession } from "next-auth/react"
 import { useState } from "react";
 import DateProvider from "../dateprovider";
+
 export default function Facts(){
     const { data: session, status } = useSession()
     return(

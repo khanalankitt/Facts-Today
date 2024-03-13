@@ -335,4 +335,60 @@ nav .container .links .user:hover {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b414c;
+}
+
+.dashboard-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background: #3b414c;
+  border-radius: 10px;
+  height: 310px;
+  width: 400px;
+}
+.dashboard-container .go-back {
+  width: 100%;
+}
+.dashboard-container .go-back a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+.dashboard-container .go-back a h3 {
+  margin: 10px;
+}
+.dashboard-container h1 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 1px solid white;
+}
+.dashboard-container h2 {
+  margin-top: 10px;
+  color: white;
+  font-size: 18px;
+}
+.dashboard-container img {
+  margin-top: 5px;
+  border-radius: 10px;
+}
+.dashboard-container button {
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: #262d3a;
+  color: white;
+  transition: 0.2s all;
+}
+.dashboard-container button:hover {
+  border: none;
+  background: rgb(233, 63, 63);
 }/*# sourceMappingURL=style.css.map */
