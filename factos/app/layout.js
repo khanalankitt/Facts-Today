@@ -7,6 +7,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>Facts Today</title>
+        <meta property="og:image" content="/download.jpg"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
         <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet"/>
