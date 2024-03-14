@@ -48,6 +48,7 @@ export function Factos(){
     const [buttonDisplay,setButtonDisplay] = useState("hidden");
     const [textareaValue,setTextareaValue] = useState("");
     const [buttonWidth,setButtonWidth] = useState("0px");
+    const [adderStyle,setAdderStyle] = useState('');
     const [data,setData] = useState([]);
     const {data: session} = useSession()
     console.log(data);
@@ -56,6 +57,7 @@ export function Factos(){
         setInputHeight("180px");
         setButtonDisplay("visible");
         setButtonWidth("100px");
+        setAdderStyle("column");
     }
     const contract = ()=>{
         if(textareaValue == ""){
@@ -64,6 +66,8 @@ export function Factos(){
             setTextareaValue("");
             setButtonDisplay("hidden");
             setButtonWidth("0px");
+            setAdderStyle("row");
+
         }else{
             if(confirm("Are you sure you want to cancel?")){
                 setAdderHeight("11%");
@@ -71,6 +75,7 @@ export function Factos(){
                 setButtonDisplay("hidden");
                 setTextareaValue("");
                 setButtonWidth("0px");
+                setAdderStyle("row");
             }
         }
     }
@@ -82,6 +87,7 @@ export function Factos(){
           setButtonDisplay("hidden");
           setTextareaValue("");
           setButtonWidth("0px");
+          setAdderStyle("row");
          
           const abc = collection(dbtext,"txtData");
           addDoc(abc,{txtVal:textareaValue,timeVal:final,username:session.user.name,userEmail:session.user.email,postId:`${v4()}`});
@@ -113,6 +119,8 @@ export function Factos(){
                         width={45}
                         alt="User"
                     />
+                    {
+                        (screen.width > 768) ? 
                             <textarea
                                 value={textareaValue}
                                 onChange={(e)=>{
@@ -124,18 +132,19 @@ export function Factos(){
                                 onClick={expand}
                                 style={{height:`${inputHeight}`}}
                             />
-                    
-                    <textarea
-                        value={textareaValue}
-                        onChange={(e)=>{
-                            setTextareaValue(e.target.value);
-                        }}
-                        maxLength="180"
-                        type="text" 
-                        placeholder="Share a fact!" 
-                        onClick={expand}
-                        style={{height:`${inputHeight}`,flexDirection:`${adderStyle}`}}
-                    />
+                        :
+                            <textarea
+                                value={textareaValue}
+                                onChange={(e)=>{
+                                    setTextareaValue(e.target.value);
+                                }}
+                                maxLength="180"
+                                type="text" 
+                                placeholder="Share a fact!" 
+                                onClick={expand}
+                                style={{height:`${inputHeight}`,flexDirection:`${adderStyle}`}}
+                            />  
+                        }
                     <button style={{visibility:`${buttonDisplay}`,width:`${buttonWidth}`}} onClick={share}>Share</button>
                     <button 
                         style={{visibility:`${buttonDisplay}`,width:`${buttonWidth}`,background:"red"}}
