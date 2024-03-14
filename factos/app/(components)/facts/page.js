@@ -57,7 +57,7 @@ export function Factos(){
         setInputHeight("180px");
         setButtonDisplay("visible");
         setButtonWidth("100px");
-        setId('jharo');
+        (screen.width < 768) && setId('jharo')
     }
     const contract = ()=>{
         if(textareaValue == ""){
