@@ -14,7 +14,7 @@ export default function Login() {
               </Link>  &nbsp; Login to get started</h2>
           <hr />
           <button onClick={()=>{
-                signIn('google',{callbackUrl:"http://localhost:3000/facts"})
+                signIn('google',{callbackUrl:"https://factos.vercel.app/facts"})
           }}>
             <br />
             <Image
@@ -25,7 +25,7 @@ export default function Login() {
             Continue with Google
           </button>
           <button onClick={()=>{
-            signIn("github",{callbackUrl:"https://localhost:3000/facts"})
+            signIn("github",{callbackUrl:"https://factos.vercel.app/facts"})
           }}>
           <Image
             src="/github.png"
