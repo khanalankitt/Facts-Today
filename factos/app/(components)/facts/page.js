@@ -7,8 +7,6 @@ import { dbtext } from "@/app/Facts-TodayConfig";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { v4 } from "uuid";
 import { onSnapshot } from "firebase/firestore";
-import { getFirestore } from "firebase/firestore";
-let db = getFirestore();
 let date = new Date();
 let day = date.getDate();
 day =  day < 10 ? "0" + day : day;
