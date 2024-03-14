@@ -3,11 +3,12 @@ import Image from "next/image";
 import Navbar from "../navbar/page";
 import { useSession } from "next-auth/react"
 import { useEffect, useState } from "react";
-import { dbimg,dbtext } from "@/app/Facts-TodayConfig";
-import { v4 } from "uuid";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { dbtext } from "@/app/Facts-TodayConfig";
 import { addDoc, collection, getDocs } from "firebase/firestore";
-
+import { v4 } from "uuid";
+import { onSnapshot } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+let db = getFirestore();
 let date = new Date();
 let day = date.getDate();
 day =  day < 10 ? "0" + day : day;
@@ -37,10 +38,12 @@ export function RequestSignin(){
     );
 }
 export function Factos(){
-
     useEffect(()=>{
-      getData()
-    },[])
+        getData()
+        const unsubscribe = subscribeToData();
+        return () => unsubscribe();
+      },[])
+
     const [facts, setFacts] = useState([]); 
     const [adderHeight,setAdderHeight] = useState("11%");
     const [inputHeight,setInputHeight] = useState("50px");
@@ -74,7 +77,6 @@ export function Factos(){
         }
     }
     const share = async () => {
-        let imgurl = "";
         if (textareaValue !== "") {
           setFacts([...facts, { fact: textareaValue }]);
           setAdderHeight("11%");
@@ -82,54 +84,27 @@ export function Factos(){
           setButtonDisplay("hidden");
           setTextareaValue("");
           setButtonWidth("0px");
-      
-          fetch(session.user.image)
-            .then(response => response.blob())
-            .then(imageBlob => {
-              if (!isValidImageType(imageBlob.type)) {
-                alert("Invalid image format. Please upload a JPEG or PNG file.");
-                return; 
-              }
-              const imgsRef = ref(dbimg, `imgs/${v4()}.${getExtension(imageBlob.type)}`);
-              uploadBytes(imgsRef, imageBlob, {
-                contentType: imageBlob.type 
-              })
-                .then(data => {
-                  getDownloadURL(data.ref).then( val => {
-                    imgurl = val;
-                    const abc = collection(dbtext,"txtData");
-                    addDoc(abc,{txtVal:textareaValue,imgUrl:imgurl,timeVal:final,username:session.user.name});
-                  });
-                })
-                .catch(error => {
-                  console.error("Error uploading image:", error);
-                });
-            })
-            .catch(error => {
-              console.error("Error fetching image:", error);
-            });
+         
+          const abc = collection(dbtext,"txtData");
+          addDoc(abc,{txtVal:textareaValue,timeVal:final,username:session.user.name,userEmail:session.user.email,postId:`${v4()}`});
+
         } else {
           alert("Cannot be empty!");
         }
       };
-      
-      function getExtension(mimeType) {
-        if (!mimeType || !mimeType.includes('/')) {
-          return ''; 
-        }
-        return mimeType.split('/')[1];
-      }
-      
-      function isValidImageType(mimeType) {
-        const supportedTypes = ['image/jpeg', 'image/png'];
-        return supportedTypes.includes(mimeType);
-      }
       const getData = async ()=>{
         const valRef = collection(dbtext,"txtData");
         const dataDB = await getDocs(valRef);
         const alldata = dataDB.docs.map(val=>({...val.data(),id:val.id}))
         setData(alldata);
       }
+      const subscribeToData = () => {
+        const valRef = collection(dbtext, "txtData");
+        return onSnapshot(valRef, (snapshot) => {
+            const updatedData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setData(updatedData);
+        });
+    }
     return(
         <>
             <div className="factos-container">
@@ -158,10 +133,19 @@ export function Factos(){
                     >Cancel</button>
                 </div>
                 <div className="items">
-                        <Item imgUrl = {session.user.image} username = {session.user.name} timeVal = {final} fact="A fact a day keeps your stupidity away:)" />
+                        <Item imgUrl = {session.user.image} username = {session.user.name} timeVal = {final} fact="A fact a day keeps your stupidity away:) Share a fact that you know and learn from others as well!" />
                         {
-                          data.map(({id,imgUrl, timeVal ,txtVal,username}) => (
-                            <Item key={id} imgUrl = {imgUrl} username = {username} timeVal = {timeVal} fact={txtVal}/>
+                          data.map(({id, timeVal ,txtVal,username,userEmail,postId}) => (
+                            <Item 
+                                key={id} 
+                                id={id} 
+                                imgUrl = "/donkey.png" 
+                                username = {username} 
+                                timeVal = {timeVal} 
+                                fact={txtVal} 
+                                userEmail={userEmail}
+                                postId={postId}
+                            />
                           ))
                         }
                 </div>

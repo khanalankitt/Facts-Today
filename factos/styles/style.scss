@@ -175,6 +175,7 @@ nav{
     flex-direction: column;
     padding: 5px;
     gap: 10px;
+
     .adder{
         border: 1px solid grey;
         height: 11%;
@@ -224,6 +225,7 @@ nav{
         width: 100%;
         overflow-y: scroll;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
         .item{
             height: 200px;
