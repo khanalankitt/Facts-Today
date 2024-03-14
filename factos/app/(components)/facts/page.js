@@ -66,8 +66,7 @@ export function Factos(){
             setTextareaValue("");
             setButtonDisplay("hidden");
             setButtonWidth("0px");
-            setAdderStyle("row");
-
+            setId('');
         }else{
             if(confirm("Are you sure you want to cancel?")){
                 setAdderHeight("11%");
@@ -75,7 +74,7 @@ export function Factos(){
                 setButtonDisplay("hidden");
                 setTextareaValue("");
                 setButtonWidth("0px");
-                setAdderStyle("row");
+                setId('');
             }
         }
     }
@@ -87,8 +86,7 @@ export function Factos(){
           setButtonDisplay("hidden");
           setTextareaValue("");
           setButtonWidth("0px");
-          setAdderStyle("row");
-         
+          setId('');
           const abc = collection(dbtext,"txtData");
           addDoc(abc,{txtVal:textareaValue,timeVal:final,username:session.user.name,userEmail:session.user.email,postId:`${v4()}`});
 
