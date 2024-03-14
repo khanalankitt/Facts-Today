@@ -10,6 +10,7 @@ export default function Home() {
           width={1080}
           alt="Landing"
           quality={100}
+          className="homeimage"
           />
           <h1>Facts Today</h1>
           <h3>Share a fact that you learned today</h3>

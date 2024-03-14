@@ -392,4 +392,49 @@ nav .container .links .user:hover {
 .dashboard-container button:hover {
   border: none;
   background: rgb(233, 63, 63);
+}
+
+@media (max-width: 768px) {
+  .home-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home-container h1 {
+    font-size: 35px;
+  }
+  .home-container h3 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  nav {
+    padding: 0px 20px;
+  }
+  .facts-container .request {
+    font-size: 22px;
+    width: 90%;
+    text-align: center;
+  }
+  .login-container {
+    width: 90%;
+  }
+  .login-container button {
+    width: 80%;
+    gap: 5px;
+  }
+  .dashboard-container {
+    width: 95%;
+  }
+  .factos-container .items {
+    align-content: flex-start;
+  }
+  .factos-container .adder {
+    padding: 5px;
+  }
+  .factos-container .adder button {
+    height: 50px;
+    margin-top: -10px;
+  }
+  .factos-container .adder textarea {
+    width: 270px;
+  }
 }/*# sourceMappingURL=style.css.map */

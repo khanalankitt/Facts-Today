@@ -349,3 +349,53 @@ nav{
         }
     }
 }
+
+@media (max-width:768px){
+   .home-container{
+        img{
+            object-fit: cover;
+        }
+        h1{
+            font-size: 35px;
+        }
+        h3{
+            font-size: 22px;
+            font-weight:500;
+        }
+    }
+    nav{
+        padding: 0px 20px;
+    }
+    .facts-container{
+        .request{
+            font-size: 22px;
+            width: 90%;
+            text-align: center;
+        }
+    }
+    .login-container{
+        width: 90%;
+        button{
+            width: 80%;
+            gap: 5px;
+        }
+    }
+    .dashboard-container{
+        width: 95%;
+    }
+    .factos-container{
+        .items{
+            align-content: flex-start;
+        }
+        .adder{
+            padding: 5px;
+            button{
+                height: 50px;
+                margin-top: -10px;
+            }
+            textarea{
+                width: 270px;
+            }
+        }
+    }
+}
