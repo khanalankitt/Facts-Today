@@ -386,10 +386,16 @@ nav{
     .factos-container{
         .items{
             align-content: flex-start;
+            .item{
+                margin: 5px 0px;
+                .info{
+                    gap: 0px;
+                }
+            }
         }
         .adder{
             padding: 5px;
-            width: 110%;
+            width: 100%;
             button{
                 height: 50px;
                 margin-top: -10px;
@@ -399,4 +405,7 @@ nav{
             }
         }
     }
+}
+#jharo{
+    flex-direction: column;
 }

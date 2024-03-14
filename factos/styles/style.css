@@ -427,9 +427,15 @@ nav .container .links .user:hover {
   .factos-container .items {
     align-content: flex-start;
   }
+  .factos-container .items .item {
+    margin: 5px 0px;
+  }
+  .factos-container .items .item .info {
+    gap: 0px;
+  }
   .factos-container .adder {
     padding: 5px;
-    width: 110%;
+    width: 100%;
   }
   .factos-container .adder button {
     height: 50px;
@@ -438,4 +444,7 @@ nav .container .links .user:hover {
   .factos-container .adder textarea {
     width: 270px;
   }
+}
+#jharo {
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */

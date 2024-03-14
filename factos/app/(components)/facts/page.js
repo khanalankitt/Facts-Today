@@ -48,7 +48,7 @@ export function Factos(){
     const [buttonDisplay,setButtonDisplay] = useState("hidden");
     const [textareaValue,setTextareaValue] = useState("");
     const [buttonWidth,setButtonWidth] = useState("0px");
-    const [adderStyle,setAdderStyle] = useState('');
+    const [id,setId] = useState('');
     const [data,setData] = useState([]);
     const {data: session} = useSession()
     console.log(data);
@@ -57,7 +57,7 @@ export function Factos(){
         setInputHeight("180px");
         setButtonDisplay("visible");
         setButtonWidth("100px");
-        setAdderStyle("column");
+        setId('jharo');
     }
     const contract = ()=>{
         if(textareaValue == ""){
@@ -112,15 +112,13 @@ export function Factos(){
     return(
         <>
             <div className="factos-container">
-                <div className="adder" style={{height:`${adderHeight}`}}>
+                <div className="adder" id={id} style={{height:`${adderHeight}`}}>
                     <Image 
                         src={session.user.image} 
                         height={45}
                         width={45}
                         alt="User"
                     />
-                    {
-                        (screen.width > 768) ? 
                             <textarea
                                 value={textareaValue}
                                 onChange={(e)=>{
@@ -132,19 +130,6 @@ export function Factos(){
                                 onClick={expand}
                                 style={{height:`${inputHeight}`}}
                             />
-                        :
-                            <textarea
-                                value={textareaValue}
-                                onChange={(e)=>{
-                                    setTextareaValue(e.target.value);
-                                }}
-                                maxLength="180"
-                                type="text" 
-                                placeholder="Share a fact!" 
-                                onClick={expand}
-                                style={{height:`${inputHeight}`,flexDirection:`${adderStyle}`}}
-                            />  
-                        }
                     <button style={{visibility:`${buttonDisplay}`,width:`${buttonWidth}`}} onClick={share}>Share</button>
                     <button 
                         style={{visibility:`${buttonDisplay}`,width:`${buttonWidth}`,background:"red"}}
