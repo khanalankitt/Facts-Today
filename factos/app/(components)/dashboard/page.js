@@ -7,7 +7,7 @@ export default function Dashboard(){
         if(confirm("Are you sure you want to logout?"))
         signOut({callbackUrl:"http://localhost:3000/facts"})
     }
-    const { data: session } = useSession()
+    const { data: session, status } = useSession()
     return(
         <>
             <div className="dashboard-container">
@@ -19,9 +19,9 @@ export default function Dashboard(){
                 <h1>Dashboard</h1>
                 <Image
                     src={session.user.image}
-                    height ={100}
-                    width  ={100}
-                    alt="user"
+                    height = {100}
+                    width  = {100}
+                    alt = "photoo"
                 />
                 <h2>{session.user.name}</h2>
                 <button onClick={handleClick}
