@@ -3,6 +3,10 @@ import { signOut,useSession } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
 export default function Dashboard(){
+    const handleClick = ()=>{
+        if(confirm("Are you sure you want to logout?"))
+        signOut({callbackUrl:"http://localhost:3000/facts"})
+    }
     const { data: session } = useSession()
     return(
         <>
@@ -20,7 +24,8 @@ export default function Dashboard(){
                     alt="user"
                 />
                 <h2>{session.user.name}</h2>
-                <button onClick={()=>signOut({callbackUrl:"http://localhost:3000/facts"})}>Logout</button>
+                <button onClick={handleClick}
+                >Logout</button>
             </div>
         </>
     );
