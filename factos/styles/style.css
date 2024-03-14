@@ -429,6 +429,8 @@ nav .container .links .user:hover {
   }
   .factos-container .adder {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
   }
   .factos-container .adder button {
     height: 50px;
