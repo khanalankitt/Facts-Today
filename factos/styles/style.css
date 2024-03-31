@@ -275,7 +275,7 @@ nav .container .links .user:hover {
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  padding: 0px 5px;
+  padding: 0px;
 }
 .factos-container .items .item .info .userDetail {
   display: flex;
@@ -291,7 +291,7 @@ nav .container .links .user:hover {
   color: #f3f3f3;
 }
 .factos-container .items .item .info p {
-  font-size: 16px;
+  font-size: 14px;
   color: #f3f3f3;
 }
 .factos-container .items .item .info p:hover {
